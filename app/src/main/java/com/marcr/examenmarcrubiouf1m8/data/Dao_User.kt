@@ -23,4 +23,12 @@ interface Dao_User {
     @Query("SELECT * FROM user_table ORDER BY id ASC")
     fun readAllAlumns(): LiveData<List<User>>
 
+    @Query("SELECT * FROM user_table WHERE note > 4 ORDER BY id ASC")
+    fun readAllAlumnsAprobats(): LiveData<List<User>>
+
+    @Query("SELECT * FROM user_table WHERE note <= 4 ORDER BY id ASC")
+    fun readAllAlumnsSuspesos(): LiveData<List<User>>
+
+
+
 }

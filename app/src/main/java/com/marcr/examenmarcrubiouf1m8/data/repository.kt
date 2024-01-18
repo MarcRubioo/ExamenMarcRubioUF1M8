@@ -47,5 +47,17 @@ class repository {
 
             return UserDatabase!!.userDao().readAllAlumns()
         }
+
+        fun selectUserAprobat(context: Context): LiveData<List<User>> {
+            UserDatabase = initializeDB(context)
+
+            return UserDatabase!!.userDao().readAllAlumnsAprobats()
+        }
+
+        fun selectUserSuspesos(context: Context): LiveData<List<User>> {
+            UserDatabase = initializeDB(context)
+
+            return UserDatabase!!.userDao().readAllAlumnsSuspesos()
+        }
     }
 }
